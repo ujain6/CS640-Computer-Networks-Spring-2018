@@ -1,2 +1,8 @@
-Nikhil Kannan, kannan
-Utkarsh Jain, utkarsh
+Implements the forwarding behavior of a switch and a router. 
+
+Steps involved:
+1.) construct a learning switch that optimally forwards packets based on link layer headers
+2.) Determine the matching route table entry for a given IP address
+3.) Develop a router that updates and forwards packets based on network layer headers
+
+using Mininet
