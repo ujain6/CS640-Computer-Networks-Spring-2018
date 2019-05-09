@@ -1,0 +1,40 @@
+Part 3
+
+Q2) For a connection between h1 and h4, latency would be 311ms(sum of rtt avaerages, L1 + L2 + L3) according to the latencies obtained for the links from part 1. And the bandwidth will be 6.96 Mbps, because of the bottleneck link L1.
+
+By running ping and Iperfer on h1 and h4, 
+our RTT is 311.746 ms. 
+The measured throughput is 6.98 Mbps. 
+
+Therefore, our predictions are right.
+
+Q3) For two pairs running simultaneously between two switches, the bandwidth will be half of the bottleneck bandwidth, that is, 10 Mbps. the latency will remain the same and that is 311 ms (rtt avergae). Similarly, for three pairs, the bandwidth is 20/3 = 6.66 Mbps. Latency will be 311 ms for this configuration too.
+
+According to the tools,
+For 2 pairs of hosts, 
+h1 - h4, latency = 243.311ms (avg RTT) and 160.098ms (RTT min), throughput = 2.97 Mbps
+h8 - h9, latency = 282.82ms (avg RTT) and 160.098ms (RTT min), throughput = 4.12 Mbps
+
+The throughput for each of the pairs has to be around 10mbps, but it appears to have low throughput values. Also, the latency for both pairs of host remains the same as in Q2.
+
+For 3 pairs of hosts, it has the same problems that are mentioned in 2 pairs host.
+
+h1 - h4, latency = 259ms (avg RTT) and 160ms (RTT min), bandwidth = 3.06 Mbps
+h7 - h10, latency = 252.62 ms (avg RTT) and 160.08 ms (RTT min), bandwidth = 1.76 Mbps
+h8 - h9, latency = 234.66 ms (avg RTT) and 160.08 ms (RTT min), bandwidth = 2.48 Mbps
+
+
+Q4) When h1 is communicating with h4, and h5 with h6, the common link L1 will provide half of the original bandwidth because of multiplexing. Therefore, for both pairs, the expected throughput is 20 Mbps. 
+Latency for h1 - h4 = 311ms
+Latency for h5 - h6 = 68ms.
+
+When we run the ping and Iperfer tool on our network, the average RTT for each pair is as follows
+avg RTT for h1 - h4 = 266.120 ms
+avg RTT for h5 - h6 = 64.87 ms
+throughput for h1 - h4 = 6.88 Mbps
+throughput for h5 - h6 = 7.58 Mbps
+
+The added throughput is almost 14.5 Mbps, individual bandwidths are no where close to 20 mbps. Also, latencies are close to our predictions.
+
+
+Though the outputs matched, the latency values were really high, while the bandwidth value was low. Our predictions should be correct, but the answers are different probably becuase the mininet was pretty slow, and laggy. This could be due to lot of internal traffic. 
